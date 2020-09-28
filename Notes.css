@@ -1,0 +1,183 @@
+
+/* 10 : Uvod do CSS */
+
+.class{
+
+	width: 50%; - Sirka, textu napr
+	font-size: 50px; - Velkost pisma
+	font-family: 'Styl pisma'; - www.cssfontstack.com
+	font-weight: bold; - Tucne pismo
+	line-height: 16px; - Medzera medzi riadkami
+	text-align: center, left, right;  Zarovanie na stred, v lavo, v pravo
+	text-align: justify; Natiane text na celu stranu
+	letter-spacing: 5px; - Medzera medzi pismenami
+	word-spacing: 5px; - Medzera medzi slovami
+
+
+	padding: 3px 6px 4px 6px; - Odsadenie v smere hodinovych ruciciek
+	padding-bottom: ;-Odsadenie/z dola
+	padding: 0px 80px; - Pouzit na body element ked chcem aby sa pri zmensovani okna zmensovala aj stranka
+
+	border: 1px solid lightgray; - Oramovanie/1px/plny/farba
+	border-radius:  4px; - Trosku zaokruhlenie
+
+}
+	/* 11 : Specificke CSS selektory */
+
+
+h2{
+	cursor : pointer; - modre okolo tlacitka
+	text-decoration: none; - Text bez podciaknutia napr
+	text-decoration: underline; - Pociarktnuty
+	text-decoration: overline; - Nadciarknuty
+	text-decoration: line-through; - Preskrtne
+	word-wrap: break-word; - Ak je text dlhy hodi ho na druhy riadok
+
+}
+
+*{ 
+ 	outline: dotted 1px purple;
+ 	overflow: scroll; - Ak sa text prelieva
+ 	display: block; - Vytvori samostatnu vetu
+ 	display: none; - Vykopne element z toku dokumentu
+	visibility: hidden; - Dokument tam stale je len ho nevidno
+	-------------------------------
+	max-height: 100vh;
+    background-attachment: fixed; - Nastavenie BG/gradient bez scrollu
+	-------------------------------
+}
+
+/* 16 : Sposoby pridavania fariem */
+
+.class { border-radius: 50%; } - Kruhovy obrazok
+.class:hover { color #F2BFAC } - Ked pridem myskou zmeni farbu
+.class:focus { color #F2BFAC } - Ked stalcim mys zmeni farbu
+
+/* 17 : Typografia */
+h2 {
+	font-style: oblique;- Zaklonenie textu
+	text-transform: uppercase; - Velke pismena
+	text-transform: lowercase; - Male pismena
+	text-transform: capitalize; - Prve pismena v slove budu velke
+
+	font-variant: small-caps; - Velke pismena vo vyske malych
+
+	text-indent: 400px; V prvom riadku spravi medzeru /   Slovo/
+	text-shadow: 1px 2px 0px #000; - tien textu, ako funguje - prehliadac inspect
+}
+
+h2{
+	
+	display: inline-block;  - Aby bol zoznam vedla seba
+	display: block; -elementu zabere celu sirku
+	list-style: none; - Zrusi bodky v zoznamoch
+}
+
+/* clearfix */  
+
+.class: before
+.class: after { - na floatovane elementy
+
+	content: " "; 
+	display: table;
+}
+
+.class: after{
+
+	clear: both;   - zrusenie floatovanie
+}
+
+.class li: before
+.class li: after { content:' " ' } - Pred / za element li hodi uvodzovovky 
+[class],[id],[li] { - zahrnie vsetky v kode }
+
+::selection { #fff, color #bada55, text-shadow: none;} - oznacovanie textu, zmena farby, ak ma text nejake tienenie tak ho vypne  
+
+.class p:first-child, .class p:last-child - odchyti prveho alebo posledneho potomka
+
+.class{ opacity: 0.8 = .8 } - Nepriehladnost od 0 - 1
+p .class { Vsetky .class ktore sa machadzaju v p }
+p.class { p elementy ktore maju .class }
+li > a {} - zahrnie prveho potomka 
+
+
+body {background: #ffff url('../photo/foto.img') 50% 0 repeat-y;}
+
+
+/*Stylovanie zoznamov*/
+
+input,
+button,
+textarea{ - Vynulovanie zoznamu
+	background: #fff;
+	border: none;}
+
+li{ box-shadow: vyskusaj si }
+
+input:not([type="checkbox"]):not([type="checkbox"]) - Aky type chcem vynat z inputu
+
+/* INHERIT */
+
+- Ked chcem aby nejaky elemnet zdedil vlastnosti svojho rodica
+napriklad, a elementy alebo formulare nezdedia vlastnosti od 
+svojho rodica a na to aby zdedil sa pouziva inherit
+
+
+/* Tabulky */
+
+h1{									- Default separate
+border-collapse: separate, collapse;- Border okolo tabulky zmizne
+vertical-align: bottom, top, middle; - Menenie poholy textu v tabulke
+}
+
+
+/* ADAPTIVE */
+h1{}
+
+@media (min-height: 800px) and (max-width: 1000px){
+	body{ 
+		bla bla 
+		white-space: nowrap; - riadok bude drzat pokope a nezlomi sa pri zmensovani okna
+	}
+}
+
+/* Resposiv design*/
+
+html{  - Ked zvysim padding elementu a nechem aby sa to zaratalo do jeho celkovej velkosti
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+/* Animacia */
+
+.post-title{
+	animation: spin 1s infinite linear; 
+	/* - Animacia ma nazov spin
+	   - Bude trvat jednu sekundu
+	   - Bude sa tocit do nekonecna ( infinite )
+	   - Podla funkcie linear ( easyin )
+	*/
+}
+
+@keyframes spin { /* Vytvotenie animacie s nazvom spin */
+	0% { transform: rotate(0deg);} /* Na zaciatku animacie ( degree = stupen ) */
+	100% { transform: rotate(360deg);} /* Na konci animacie */
+}
+
+/* SVG */
+
+circle{
+	stroke-width: 2 ;  /* Sirka obrysu */
+	stroke: black; /* farba obrysu */
+	fill: none /* Vnutro kruhu nebude vyfarbene */
+}
+
+.second {
+    --rotation: 0;
+    transform: rotate(var(--rotation));
+}
+
+.second{ --rotation: 0deg; }

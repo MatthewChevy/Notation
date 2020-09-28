@@ -1,0 +1,158 @@
+/* ZAKLADY GIT */
+
+λ git config --global user.name "matthew.chevy"
+λ git config --global user.email "matej.sevcik11@gmail.com"
+
+
+git init  / Tymto prikazom zacinas. Vyvori novy adresar nieco.git. 
+ls -la  / Zobrazi vsetky subory v zlozke
+clear  / Vyscisti consolu
+git status  / Kontroluje stav projektu
+git log  / Historia vyvoja projektu
+git log --oneline  / Vypis na jeden riadok
+git log --graph --decorate --abbrev-commit --all --pretty=oneline / Pekny vypis
+
+--------------------------------------------------------------------
+
+git add index.html  / Oznaci subor ktory chcem potvrdit na zmenu ( STAGED, je ready na pridanie do novej verzie )
+git add *.jpg      / Oznaci vsetky subori s priponou .jpg
+git add .         / Oznaci vsetky subori ( STAGED )
+
+--------------------------------------------------------------------
+
+Ked uz je adresar STAGED, treba ho potvrdit aby bol v novej verzii:
+
+git commit -m "Napisem co za zmenu som spravil"
+
+--------------------------------------------------------------------
+
+Ak ho nechcem pridat no novej verzie:
+
+git restore --staged index.html  / Napriklad, alebo hociktory subor
+git restore --staged .  / Vsetky odstrani
+
+--------------------------------------------------------------------
+
+Skrateny tvar ozacenia suboru ( STAGED ) a potvrdenie s komentarom
+Toto funguje iba ak subor nebol prave vytvoreny
+
+git commit -am "Napisem co za zmenu som spravil"
+
+--------------------------------------------------------------------
+
+Ked sa chcem vratit/pozriet sa na inu verziu 
+
+git checkout 45689f115e  // Hash hodnota pri vypise git log
+git checkout master  // Spat na hlavnu vetvu, akutalna verzia kodu
+
+--------------------------------------------------------------------
+
+/* GIT vo Visual Studio Code */
+
+Modra  / Nastala zmena
+Cervena  / Nieco som vymazal
+Zelena  / Nieco pribudlo
+
+M - Modifikovane
+U - Untracted / treba git add
+A - Novy subor ktory je add
+D - Subor je pripraveny na vymazanie
+C - Konflikt
+
+--------------------------------------------------------------------
+
+/* GIT Clonovaie */
+
+C:\Users\Acer Aspire\Desktop\Small projects  // Nasmerujem sa do zlozky kde chcem natiahnut clona
+
+git clone https://github.com/MatthewChevy/Template.git  // Naklonujem
+
+--------------------------------------------------------------------
+
+/* GITHUB Push */ Upload
+
+Pri vytvoreni noveho repozitara github.com vyhodi tieto prikazy,
+ak uz mam vytvoreny nejaky kod, ak este nemam nic pouzijem druhe kody ktore ponuka github
+
+git remote add origin https://github.com/MatthewChevy/Test.git  // Vytvorenie spojenia 
+git remote remove origin  // Vymazat spojenie
+
+git push -u origin master  // Nahod zmeny na server
+                          // -u znamena ze pre tento projekt chcem iba origin master.
+                              Tahat a ukladat iba hlavnu vetvu. 
+                              Ked toto nastavim staci mi napisat len
+                              git push, git pull
+       
+--------------------------------------------------------------------
+
+/* GITHUB Pull */ Download
+
+git pull origin master  // Stiahni zo servera master vetvu
+
+--------------------------------------------------------------------
+
+/* GITHUB Remote */
+
+Ked pracujes s remote serverom a chces checknut ci nenastali zmeny
+
+git remote update  // Natiahne info zo servera, potom hodis nasledujuci prikaz
+
+git status // Ak vypise nieco ako "Your branch is behind 'origin/master' by 1 commit"
+          // vies ze na serveri nastala zmena, si pozadu o 1 commit
+
+git pull origin master  // Natiahnes si zmenu
+
+git whatchanged origin/master -n 1  //Zmena podrobnejsie rozpisana
+
+
+--------------------------------------------------------------------
+
+/* GIT Branch */  (login = priklad)
+
+
+git branch  // Vypise vsetky vetvy
+git branch -vv // Podrobnejsi
+git branch login  // Vytvori novu vetvu ale stale na nachadas na master vetve
+
+git checkout login  // Prehodis sa do novej vetvy
+git checkout master  // Prehodis sa do master vetvy
+git checkout -b register  // Vytvori novu vetvu a rovno sa na nu prehodi
+
+--------------------------------------------------------------------
+
+/* GIT Zlucenie vetiev */ (login = priklad)
+
+Ak chcem zmeny z inych vetiev dostat do master, musis byt v master vetve
+
+git merge login  // Zlucit so zmenami na vetve login
+
+Megring // nedestruktivny sposob, zostanu napr. 2 vetvy
+Rebasing // destruktivny  sposob, zostane 1 vetva, zobere novu vetvu a nalepi ju na master
+
+
+--------------------------------------------------------------------
+
+/* GIT Ignore */
+
+Sposob ako gitu povedat ktore subory a adresare ma ignorovat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

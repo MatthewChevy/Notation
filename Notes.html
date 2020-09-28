@@ -1,0 +1,176 @@
+Poznámky z knihy HTML5 (HyperText Markup Language )  a CSS3 (Cascading Style Sheet)
+
+ARIA :
+
+<header role="banner" > - ( element <header> ) Hlavné záhlavie stranky, horny banner.
+<nav role="navigation"> - ( element <nav> ) Skupina navigačných elementov, odkaz na nejakú stranku, autorov.
+<div role="main">  - ( element <div> <section> <article> ) Hlavný obsah stranky.
+   
+<aside role="complementary"> - ( element <aside> <div> ) Doplňuje hlavný obsah ale má zmysel aj sama o sebe.
+<footer role="contentinfo"> - ( element <footer> ) Informácie o copyright alebo odkazy o ochrane súkromia.
+
+<div id="Názov"> - Pridelenie jednoznačného identifikatoru elementu.
+<article class="Názov pre triedu"> - Priradenie triedy k elementu.	  
+<p><time datetime="2011-10-05T18:30:00"> - Pol siedmej dnes večer </time> - Nezobrazuje čas ale zobrazí text
+<p><time datetime="2011-10-05"</time></p> - Taktiež nezobrazuje čas 
+<time pubdate> Tu dátum </time> - Atribud pubdate možeme zapísať týmito dvoma možnosťami.
+<time pubdate="pubdate"> Tu dátum </time>
+------------------------------------------------------------------------------------------
+
+Atribúty:
+
+<a href="Hodnota URL"> URL adresa </a> - Ciel odkazu, jednoducho povedané aká stránka sa má po kliknutí zobraziť.
+
+------------------------------------------------------------------------------------------
+
+Elementy :
+
+<ul> </ul> - číslovaný zoznam
+<ol> </ol> - odrážkový 
+<li> </li> - položka zoznamu
+<li> <del> </del> </li> - preškrtnutý zoznam, možeme použiť aj <s> </s>
+<li> <ins> </ins> </li> - počiarknutý zoznam
+<code> </code> - Označenie kódových príkazov, obalujeme ho do elementom <pre>
+<samp> </samp> - Výpis bude v strojopise, naznačenie odlišnéhotextu alebo výpis z programu
+<pre> </pre> - Zobrazí všetky medzeri a zalomenie riadku presne tak ako je napisné v kóde, strojopis
+<br> alebo <br /> - Zalomenie riadku, napr. pri adresách
+<div> </div> - 
+<span> </span> - Obsahuje ľubovolnú veľkosť textu, nadpisú a obrázkov, podobný <p> ale <div> má nulový margin a obluje slovo alebo frázu, in-line (Nezalamuje riadok)
+
+------------------------------------------------------------------------------------------
+	
+TEXT :
+  
+ <strong> </strong> - Zdôrazenie dôležitého textu
+ <strong> <strong> </strong> </strong> - Ešte väčšie zdôrazenie textu, zvyšuje sa každou úrovňou
+ <small> </small> - Ozačujeme väčšinou copyright, krátke frázy, ochrana súkromia 
+ <em> </em> - Dávame na text malý dôraz
+ <b> </b> - Keď chceme z praktických dôvodou upútať pozornosť ale aby sme na text nekládly dôraz
+ <i> </i> - Element i vyjadruje postoj/názor
+ <mark> </mark> - Farebné označovanie textu, napríklad označovanie výsledkov výhladavaní (Google)
+ <abbr> </abbr> - Označenie skratiek, medzi element <abbr> možeme umiestniť napríklad skratku HTML
+ <abbr title="HyperText Markup Language"> HTML</abbr> - Atributom title vysvetlujeme celú skratku kde HTML predstavuje skratku a title ju vysvetluje
+ <p>H<sup>2</sup>O </p> - Označenie nad čiarov
+ <p>H<sub>2</sub>O </p> - Označenie pod čiarov
+
+------------------------------------------------------------------------------------------
+ 
+ CITOVANIE TEXTU :
+ 
+ <cite> </cite> - Element je vodný pre označovanie umeleckých a hudobných diel, filmov, kníh
+ <blockquote cite="URL"> </blockquote> - Pri citovaní článku použijeme tento spôsob.
+ <blockquote> </blockquote> - Obsah tohoto elementu môže byť dlhý aj krátky.
+ <q> </q> - Citácia krátkej frázy, aj je to zas nutné použijeme zase <cite="URL">, citácia bude v úvodzovkách
+ <q lang="fr"> </q> - Ak je citácia v inom jazyku ako ten v ktorom píšeme stránku
+ <cite> <q> <blockquote> - Vždy obalujeme do elementu <p>
+ <dfn> </dfn> - Ozačujeme jeho termín, nie jeho definiciu. Musi sa nachádzať blízko svojej definicie. Slovo bude v úvodzovkách.
+
+
+------------------------------------------------------------------------------------------
+
+FORMULÁRE :
+
+<form action="www.kde-sa-odoslu-udaje.sk" method="GET-metoda-vystupu-pre-programatora" class="clasifikator"> - V tomto elemente musia byt obalene fomrulare
+	
+	<input type="text" 2 name="name" 3 placeholder="Meno" required="Pri nezadani mena vypise hlasku">
+
+Jednoriadokvy formular, neuzatvara sa
+
+1
+	type="email"
+	type="password" - kamufluje znaky
+	type="checkbox"
+	Strasna kopa, kukni sa do knihy
+2
+
+	name="email"
+	name="pass"
+	name="member"
+
+3
+	placeholder="Tak jemne napisana hodnota ktora je prepisovatelna"
+	metoth
+	value="Predvyplnena hodnota"
+
+</form>
+
+<textarea name="message" id="" cols="30" rows="10"> Predvyplnena hodnota sem </textarea>
+	
+1 
+	name="najlepsie jedno slovo ktore opisuje co je v nutri za hodnota"
+
+2
+	id="Pre preogramatora"
+
+3-4 
+	Riadky a stĺpce
+
+
+</textarea>
+
+<select name="meno">
+	<option value="1" selected>Matej</option>
+	<option value="2">Matus</option>
+	<option value="3">Ivan</option>
+
+	value="hodnota pre programatora"
+</select>
+
+<label>
+	<input 
+	for="nazov id na ktory chceme naviazat label"> Nazov napriklad, klikni sem (vedla checkboxu)
+</label> 
+
+Obalenie inputu do labelu
+
+<label>
+	<input type="checkbox" name="member">
+	Napis vedla checkboxu
+</label>
+
+---------------------------------------------------------
+
+V radio buttonoch mozeme zakliknut len jednu moznost, keby narobim vela check boxov tak mozem zakliknut viac moznosti
+
+<label>
+	<input  type="radio" name="day" value="Friday" checked>
+	Friday
+</label>
+
+<label>
+	<input  type="radio" name="day" value="Saturday">
+	Saturday
+</label>
+
+<label>
+	<input  type="radio" name="day" value="Sunday">
+	Sunday
+</label>
+
+--------------------------------------------------------
+<body>
+	ul>li*4>a{Klikni sem} + TAB = 
+	<ul>
+		<li><a href="">Klikni sem</a></li>
+		<li><a href="">Klikni sem</a></li>
+		<li><a href="">Klikni sem</a></li>
+		<li><a href="">Klikni sem</a></li>
+	</ul>
+</body>
+
+-------------------------------------------------------------------------------------------
+
+<script defer src="app.js"></script> - Defer wait while download HTML is complete  // V 94
+<script async src="app.js"></script> - Async launch immediately when script is download
+
+-------------------------------------------------------------------------------------------
+Above the fold - The top half of the newspaper
+
+Preload tell explorer that, first download this file
+
+<link rel="preload" href="img/palino1.jpg" as="image"> as - meaning what kind type of file is it
+<link rel="preload" href="js/very_very_imp.js" as="script">
+<link rel="preload" href="font.woff" as="font" crossorigin> crossorigin have to use when use external font
+                                                            and should use when need someting form external source
+
+-------------------------------------------------------------------------------------------

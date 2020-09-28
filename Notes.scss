@@ -1,0 +1,85 @@
+
+
+/* Komentar, nezobrazi sa ked robim compressed */
+/*! Zobrazi sa aj v compressed !*/
+// Line komentar
+
+
+// Vnaranie kodu - Nesting
+
+font: {
+
+	size: $premenna;
+	family: $premenna;
+	weight: normal; 
+}
+
+@import 'nazov';
+
+Vytovrim novy subor ktory musi zacinat "_" , scss/_nazov.scss
+''
+@import vhodne nazvy tu : https://github.com/twbs/bootstrap/tree/master/scss;
+
+
+nav {
+&:hover,
+&:focus{
+	color: lighten( $premenna, 25% );
+	color: darken( #bada55, 25% );
+	color: desaturate( odobere farebnost );
+	color: complemetary( Opacna farba na kruhovej palete );
+Viac HSL funkcie SASS
+}
+
+&: Skrateny zapis rodicovskeho elementu
+
+main{ // & mozem pouzivat aj pred aj za
+	background: $premenna;
+
+	& .block & { background: $premenna }
+	.contact & { background: $premenna }
+	.gallery & { background: $premenna }
+}
+
+/*Loop ukazka */
+
+$pages-colors:( kde 'home' je $page a #8fd2d1 (hex) je $colors )
+
+	'home': #8fd2d1,    //<-- Mapa
+	'gallery': #ffd256,
+	'blog': #019dcd,
+	'contact':#fd865b	
+);
+
+@each $page, $colors in $pages-colors{
+
+	.#{$page} main { background: $colors;}
+	.#{$page} .active a { color: darken( $colors, 15% ); }
+	.#{$page} .shadow { text-shadow: -1px 1px 0px darken( $colors, 10% ); }
+}
+
+/* Rozdelenie suboru */
+
+@import 'nazov';
+
+Vytovrim novy subor ktory musi zacinat "_" , scss/_nazov.scss
+
+@import vhodne nazvy tu : https://github.com/twbs/bootstrap/tree/master/scss;
+
+
+/* 23 @include vs @extend vs %placeholder */
+
+
+
+@include vloží všetky riadky mixinu všade, veľa duplicity
+
+@extend zlúči spoločné vlastnosti, very DRY
+
+%placeholder je šablóna, z ktorej môžeš extendovať, 
+		ak nechceš žiaden nadbytočný class vytvárať
+
+
+
+ 
+
+
