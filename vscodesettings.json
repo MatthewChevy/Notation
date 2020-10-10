@@ -1,0 +1,25 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "window.zoomLevel": 0,
+    "phpcs.ignorePatterns": [
+    
+    ],
+    "php.validate.executablePath": "C:/Program Files/php/php.exe",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.external.windowsExec": "C:\\Users\\Acer Aspire\\Documents\\cmder",
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.external.linuxExec": "C:\\Users\\Acer Aspire\\Documents\\cmder",
+    "liveServer.settings.CustomBrowser": "microsoft-edge",
+    "liveSassCompile.settings.autoprefix": [],
+    "liveSassCompile.settings.formats": [
+        {
+          "format": "expanded",
+          "extensionName": ".css",
+          "savePath": "~/../css/"
+        }
+    ],
+    "liveServer.settings.donotShowInfoMsg": true,
+    "git.confirmSync": false,
+    "workbench.activityBar.visible": true,
+    "compile-hero.config": ""
+}
