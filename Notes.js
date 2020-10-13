@@ -15,6 +15,7 @@ dude.alt // Get alt atribute
 dude.classList.remove("dude"); 
 dude.classList.add("dude");
 dude.classList.contains("dude"); //Check if have class
+dude.classList.toggle("dude", fart < grumble ); //toggle of classList, second parameter is condition
 
 dude.nextElementSibling() // Get Sibling
 .textContent = 'Another Text' // Get text inside element and change text
@@ -22,7 +23,7 @@ dude.nextElementSibling() // Get Sibling
 getComputedStyle( class / id ) // Get all css values
 
 Number( '68') = 68; // Change string to integer
-parseInt ('sting') = number;
+parseInt('sting') = number;
 
 // Switch NodeList to Array
 
@@ -79,3 +80,36 @@ var that = this;
  setTimeout(function () {
      that.doStuff();
  }, 4000);
+
+
+ 'dude and dudes'.replace( /\s+/g,'-'); // dude-and-dudes;
+/* /s - small white spaces, 
+  /g - goes through the whole string, does not stop at the first */
+
+arrOfNumbers.reduce((a , b) => a + b, 0)  // sum of all numbers in array
+
+
+// -----------------------------------------------------------------------
+// Module Pattern, for example
+
+var Orb = ( function(){
+
+    function updateProgress( len, tweetLength, pathLength, per ){
+		
+		if ( len <= tweetLength ) {
+			var newOffset = pathLength - (pathLength * per) + 'px';
+			progress.style.strokeDashoffset = newOffset;
+		};
+    }
+
+    return{
+        updateProgress: updateProgress,
+    }
+
+}());
+
+// Global enviroment
+
+    Orb.updateProgress( len, tweetLength, pathLength, per );
+
+// -----------------------------------------------------------------------

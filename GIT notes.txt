@@ -77,6 +77,8 @@ ak uz mam vytvoreny nejaky kod, ak este nemam nic pouzijem druhe kody ktore ponu
 git remote add origin https://github.com/MatthewChevy/Test.git  // Vytvorenie spojenia 
 git remote remove origin  // Vymazat spojenie
 
+git branch -M master  // 
+
 git push -u origin master  // Nahod zmeny na server
                           // -u znamena ze pre tento projekt chcem iba origin master.
                               Tahat a ukladat iba hlavnu vetvu. 
@@ -112,7 +114,9 @@ git whatchanged origin/master -n 1  //Zmena podrobnejsie rozpisana
 
 git branch  // Vypise vsetky vetvy
 git branch -vv // Podrobnejsi
-git branch login  // Vytvori novu vetvu ale stale na nachadas na master vetve
+git branch nazov  // Vytvori novu vetvu ale stale na nachadas na master vetve
+
+git branch -d nazov  //Vymaze vetvu
 
 git checkout login  // Prehodis sa do novej vetvy
 git checkout master  // Prehodis sa do master vetvy
