@@ -106,3 +106,18 @@ const users = [
   
 //At least one of them has the 'administrator' feature?
 users.some( user => 'administrator' in user );
+
+
+//For...of loop
+
+(function(){
+    for ( let arg of arguments ) console.log( arg );
+}(1, 2, 3));
+
+for ( let val of RLM.entries() ) { // use when through the loop ( value )
+    console.log( val );
+}
+
+for ( let key in obj ) {  //81 ES6/24, use when through the loop ( key )
+    console.log( key, obj[key] )
+}
