@@ -43,7 +43,7 @@ git commit -am "Napisem co za zmenu som spravil"
 Ked sa chcem vratit/pozriet sa na inu verziu 
 
 git checkout 45689f115e  // Hash hodnota pri vypise git log
-git checkout master  // Spat na hlavnu vetvu, akutalna verzia kodu
+git checkout main  // Spat na hlavnu vetvu, akutalna verzia kodu
 
 --------------------------------------------------------------------
 
@@ -77,10 +77,10 @@ ak uz mam vytvoreny nejaky kod, ak este nemam nic pouzijem druhe kody ktore ponu
 git remote add origin https://github.com/MatthewChevy/Test.git  // Vytvorenie spojenia 
 git remote remove origin  // Vymazat spojenie
 
-git branch -M master  // 
+git branch -M main  // 
 
-git push -u origin master  // Nahod zmeny na server
-                          // -u znamena ze pre tento projekt chcem iba origin master.
+git push -u origin main  // Nahod zmeny na server
+                          // -u znamena ze pre tento projekt chcem iba origin main.
                               Tahat a ukladat iba hlavnu vetvu. 
                               Ked toto nastavim staci mi napisat len
                               git push, git pull
@@ -89,7 +89,7 @@ git push -u origin master  // Nahod zmeny na server
 
 /* GITHUB Pull */ Download
 
-git pull origin master  // Stiahni zo servera master vetvu
+git pull origin main  // Stiahni zo servera main vetvu
 
 --------------------------------------------------------------------
 
@@ -99,12 +99,12 @@ Ked pracujes s remote serverom a chces checknut ci nenastali zmeny
 
 git remote update  // Natiahne info zo servera, potom hodis nasledujuci prikaz
 
-git status // Ak vypise nieco ako "Your branch is behind 'origin/master' by 1 commit"
+git status // Ak vypise nieco ako "Your branch is behind 'origin/main' by 1 commit"
           // vies ze na serveri nastala zmena, si pozadu o 1 commit
 
-git pull origin master  // Natiahnes si zmenu
+git pull origin main  // Natiahnes si zmenu
 
-git whatchanged origin/master -n 1  //Zmena podrobnejsie rozpisana
+git whatchanged origin/main -n 1  //Zmena podrobnejsie rozpisana
 
 
 --------------------------------------------------------------------
@@ -114,24 +114,24 @@ git whatchanged origin/master -n 1  //Zmena podrobnejsie rozpisana
 
 git branch  // Vypise vsetky vetvy
 git branch -vv // Podrobnejsi
-git branch nazov  // Vytvori novu vetvu ale stale na nachadas na master vetve
+git branch nazov  // Vytvori novu vetvu ale stale na nachadas na main vetve
 
 git branch -d nazov  //Vymaze vetvu
 
 git checkout login  // Prehodis sa do novej vetvy
-git checkout master  // Prehodis sa do master vetvy
+git checkout main  // Prehodis sa do main vetvy
 git checkout -b register  // Vytvori novu vetvu a rovno sa na nu prehodi
 
 --------------------------------------------------------------------
 
 /* GIT Zlucenie vetiev */ (login = priklad)
 
-Ak chcem zmeny z inych vetiev dostat do master, musis byt v master vetve
+Ak chcem zmeny z inych vetiev dostat do main, musis byt v main vetve
 
 git merge login  // Zlucit so zmenami na vetve login
 
 Megring // nedestruktivny sposob, zostanu napr. 2 vetvy
-Rebasing // destruktivny  sposob, zostane 1 vetva, zobere novu vetvu a nalepi ju na master
+Rebasing // destruktivny  sposob, zostane 1 vetva, zobere novu vetvu a nalepi ju na main
 
 
 --------------------------------------------------------------------
