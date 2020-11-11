@@ -1,0 +1,44 @@
+// vytvorit package.json
+npm init -y
+  
+// pridat babel-cli do dev
+npm install babel-cli --save-dev
+  
+// pridas set pluginov, co menia es6 na es5
+npm install babel-preset-env --save-dev
+
+// YARN
+
+yarn                    ===     npm install
+yarn init               ===     npm init
+yarn add vue            ===     npm install vue --save
+yarn remove vue         ===     npm uninstall vue --save
+yarn add vue --dev      ===     npm install vue --save-dev
+yarn upgrade            ===     npm update --save
+yarn global add vue     ===     npm install vue --global
+
+
+// zisti co je stare
+yarn outdated
+  
+  
+// vsetky package upgradni
+yarn upgrade
+  
+  
+// len tento konkretny
+yarn upgrade autoprefixer
+  
+  
+// vyber si medzernikom ktore chces upgradnut
+yarn upgrade-interactive
+  
+  
+// prebi package.json a proste stiahni najnovsiu
+yarn upgrade --latest
+yarn upgrade-interactive --latest
+
+//Parcel
+
+parcel index.html --out-dir public
+parcel build index.html --out-dir public

@@ -1,6 +1,10 @@
 
 /********** ES6 ***********/
 
+import '../scss/base.scss'
+import json from '../adventure.json'
+import _ from 'lodash'
+
 //  => - arrow operator
 
 array.map( x => x.length ); // Take array and return length of each x. Map take array and create new array
@@ -37,6 +41,10 @@ var redLetterMedia = ['Mike', 'Jay', 'Rich Evans'];
 function kill () {
     console.log( this );
 }
+
+addEventListener( 'click', () => {  // it's like widnow.addEventListener
+    return true
+});
 
 kill(); // this = window
 kill.call( redLetterMedia ); // Call function kill and set redLetterMedia to 'this'
@@ -121,3 +129,9 @@ for ( let val of RLM.entries() ) { // use when through the loop ( value )
 for ( let key in obj ) {  //81 ES6/24, use when through the loop ( key )
     console.log( key, obj[key] )
 }
+
+json.forEach( character =>{
+
+    let { who, wat } = character
+    dude.createNewNode( who, wat )
+})

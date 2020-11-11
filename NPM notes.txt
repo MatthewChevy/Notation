@@ -1,8 +1,0 @@
-// vytvorit package.json
-npm init -y
-  
-// pridat babel-cli do dev
-npm install babel-cli --save-dev
-  
-// pridas set pluginov, co menia es6 na es5
-npm install babel-preset-env --save-dev
