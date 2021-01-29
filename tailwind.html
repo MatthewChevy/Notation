@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+defaultConfig.stub.js
+
+<header class="
+    t  //top
+    b  //bottom 
+    l  //left
+    r  //right
+
+    tl //top-left
+    br //bottom-right
+">
+</header>
+<body>
+<!-- EBN = Element bude na-->
+        <Rozlozenie-elementov class="
+
+            flex  //Ked chem mat elemety vedla seba obalim ich a tomu obalovacu dam flex
+            items-start // align-items https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+            flex-shrink-0 // Elementy sa nebudu zmensovat pri zmensovani okna
+
+            w-screen //EBM celu sirku obrazovky
+            min-h-screen // Minimalne na vysku obrazovky (h = height)
+
+        "></Rozlozenie-elementov>
+
+        <Farby class="
+        // Pozor pri pouzivani gradient a background, gradiend je img takze prebije obycany farebny bg
+
+            bg-gray     //Pozadie
+            bg-gray-200
+            bg-gradient-to-r from-red-400 to-pink-400 // Gradient pojde z pravej strany, z cervenej do ruzovej
+
+        "></Farby>
+
+        <Vlastnosti-elementov class="
+
+            block // element bude na celu sirku rodica
+            hidden  // hidden
+
+            w-80  //width
+            h-full //height 100%
+            mx-4  //margin po osi X ( X = - , Y = |)
+
+            p-3   //padding
+            px-3  // osa x
+            py-4  // osa y
+
+            rounded // zaoblenie rohov
+            rounded-lg
+            rounded-br-3xl
+
+            shadow-xl // tiene
+            shadow-inner // vnutorny
+
+            border-black //default border 1px
+            border-b border-gray-400 //border bottom bude mat sedu farbu
+            border-l border-b border-gray-400 //border bottom a left bude mat sedu farbu
+
+            hover: //ked nan pridem mysov
+
+        "></Vlastnosti-elementov>
+
+        <Texty class="
+
+            font-bold 
+
+            text-sm //small
+            text-lg
+
+            leading-4 // medzera medzi riadkami
+            leading-loose //
+
+
+        "></Texty>
+
+        <div> Ak by som chcel button a svg vedla seba, na obalovaci element hodim flex
+
+            <button></button>
+
+            <a href="#" class="ml-0.5 p-1 text-gray-500 hover:text-gray-700">
+                <svg class="fill-current w-6 h-6" viewBox="0 0 20 20">  //fill-current, svg sa vyfarby farbou textu, w-6 a h-6 nastavim rozmery
+                    <path d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493"></path>
+                </svg>
+            </a>
+        </div>
+</body>
+</html>

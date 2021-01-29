@@ -1,5 +1,7 @@
 import Dude from "./components/Dude.vue" // Aby mi toto fungovalo, musí mi bežať module bundler
 
+Vue.config.ignoredElements = ['trix-editor'] //Zacne ignorovat trix editor component
+
 Vue.component('bike-card',{  // 'bike-card' je nazov mnou vytvoreneho HTML elementu
 
     template:               // Mozem to zapisat aj 'bikeCard'
@@ -38,11 +40,3 @@ const app = new Vue({  //Tento kus kodu musi byt pod vue.component
 
 })   
 
-/*<html>
-
-:title = 'premenna' --> Ked pouzijem : pred atribut tak obsah atributu moze byt javascript
-v-bind:class = 'podmienka' --> v-bind: = :
-
-v-if="awesome"
-
-/</html>*/

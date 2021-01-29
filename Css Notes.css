@@ -165,3 +165,19 @@ circle{
 
 .second{ --rotation: 0deg; }
 
+[v-cloak] > * {
+	display: none
+}
+[v-cloak].imgimg::before {
+	display: block;
+    border-right-color: #ffd400;
+    border-top-color: #ffd400;
+    content: "";
+	top: 35px;
+    height: 5em;
+    width: 5em;
+    position: relative;
+	margin: 0 auto;
+	animation: spin 2s linear infinite;
+  }
+

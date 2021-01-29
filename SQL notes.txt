@@ -1,0 +1,177 @@
+Ako vybrať všetko z tabuľky, každý stĺpec pre každý riadok z tabuľky:
+
+SELECT * FROM movies
+
+
+Ako vybrať všetky stĺpce z tabuľky, ale iba pre prvý riadok:
+
+SELECT * FROM movies
+WHERE director_id = 1
+
+
+Ako vybrať z tabuľky všetky stĺpce pre druhý film, ale iba v istom rozmedzí rokov:
+
+SELECT * FROM movies
+WHERE director_id = 2
+AND year >= 2000 AND year <= 2010
+
+
+Druhý spôsob, ako vybrať podľa rozmedzia:
+
+SELECT * FROM movies
+WHERE director_id = 2
+AND year BETWEEN 2000 AND 2010
+
+
+Ako vybrať z tabuľky pre niekoľko idčiek:
+
+SELECT * FROM movies
+WHERE director_id IN (2, 3)
+AND year BETWEEN 2000 AND 2010
+
+
+Toto môžeme skombinovať s ďalšími podmienkami:
+
+SELECT * FROM movies
+WHERE director_id IN (2, 3)
+AND year BETWEEN 2000 AND 2010
+AND year != 2004
+
+
+Nemusíme vyberať všetky stĺpce, môžeme si presne určiť, ktoré informácie chceme. A vždy by sme to mali robiť, pretože nechceme plytvať, pretože to trvá dlhšie a potom je všetko pomalšie a to nikdy nechceme, že, ŽE:
+
+SELECT first_name, last_name
+FROM directors
+
+
+Atď.:
+
+SELECT first_name, last_name, birthdate
+FROM directors
+
+
+V SQL máme funkcie, napríklad cez YEAR, MONTH, DAY vieme získať rok, mesiac, deň z dátumu:
+
+SELECT first_name, last_name, YEAR(birthdate), MONTH(birthdate), DAY(birthdate)
+FROM directors
+
+
+Funkcie môžeme používať v podmienkach:
+
+SELECT first_name, last_name
+FROM directors
+WHERE YEAR(birthdate) BETWEEN 1950 AND 1960
+
+
+Atď.:
+
+SELECT first_name, last_name
+FROM directors
+WHERE MONTH(birthdate) = 1
+AND DAY(birthdate) <= 15
+
+
+Ako v MySQL zisiť aktutálny čas a dátum:
+
+SELECT NOW()
+
+
+Funkcie môžeme kombinovať a používať ich vy výpočtoch. Napríklad ak máme dátum narodenia človeka, takto vieme zistiť jeho vek:
+
+SELECT first_name, last_name, country, YEAR(NOW()) - YEAR(birthdate)
+FROM directors
+
+
+Stĺpce vieme pridať tzv. “alias”, nazvať ich inak, aby sme vedeli s hodnotami ľahšie pracovať:
+
+SELECT first_name, last_name, country, YEAR(NOW()) - YEAR(birthdate) AS age
+FROM directors
+
+
+Funkciou CONCAT() vieme zlepiť stĺpce do jedného stringu:
+
+SELECT first_name, last_name, country,
+    YEAR(NOW()) - YEAR(birthdate) AS age,
+    CONCAT(first_name, ' ', last_name) AS name
+FROM directors
+
+
+Výsledky vieme usporiadať:
+
+SELECT first_name, last_name, country,
+    YEAR(NOW()) - YEAR(birthdate) AS age,
+    CONCAT(first_name, ' ', last_name) AS name
+FROM directors
+ORDER BY age ASC
+
+
+Vzostupne alebo zostupne. Od najmenšieho po najväčší alebo naopak:
+
+ORDER BY age ASC
+ORDER by age DESC
+
+Ako obmedziť počet výsledkov:
+
+SELECT * FROM movies
+LIMIT 5
+
+
+Ako obmedziť počet výsledkov, ale preskočiť niekoľko prých. Takto vieme spraviť stránkovanie. Na prvej strane chceme mať 5 výsledkov. Na druhej chceme mať zasa 5, ale chceme preskočiť prých 5. Na tretej chceme preskočiť 10, atď.:
+
+SELECT * FROM movies
+LIMIT 5 OFFSET 10
+
+
+V SQL máme štatistické funkcie. Napríklad vieme zistiť najvyššiu hodnotu daného stĺpca:
+
+SELECT MAX(gross) FROM movies
+
+
+Čísla vieme naformátovať, aby sa viac podobali na peniaze:
+
+SELECT FORMAT(MAX(gross), 2) FROM movies
+
+
+Dokonca na ne vieme prilepiť peňažný symbol, aby sa podobali ešte viac:
+
+SELECT CONCAT('$', FORMAT(MAX(gross), 0)) AS gross FROM movies
+
+
+Vieme zistiť minimum, maximum, priemer, súčet…:
+
+SELECT
+    CONCAT('$', FORMAT(MAX(gross), 0)) AS max,
+    CONCAT('$', FORMAT(MIN(gross), 0)) AS min,
+    CONCAT('$', FORMAT(AVG(gross), 0)) AS avg
+FROM movies
+WHERE director_id = 3
+
+
+Ak vytvoríte z čísla string, pozor na to, aby ste neusporiadavali podľa stringu, aby ste nerobili ORDER podľa abecedy namiesto podľa výšky čísla:
+
+SELECT title, year, CONCAT('$', FORMAT(gross, 0)) as total_gross
+FROM movies
+ORDER BY gross DESC
+
+Ako vložiť riadok do databázy. Ideálne by sme mali vymenovať stĺpce, ktoré chceme naplniť a potom vymenovať hodnoty (VALUES) ktorými stĺce chceme naplniť:
+
+INSERT INTO directors (first_name, last_name, country, birthdate)
+VALUES ('Paul Thomas', 'Anderson', 'United States', '1970-07-26')
+
+
+Stĺpce môžeme vynechať, ale pozor, musíme vkladať rovnaký počet hodnôt, ako máme stĺpcov. Toto by hodilo chybu:
+
+INSERT INTO directors
+VALUES ('Ingmar', 'Bergman', 'Sweden', '1918-07-14')
+
+
+Ak zadáme NULL ako hodnotu, do stĺpca sa predvyplní DEFAULT hodnota:
+
+INSERT INTO directors
+VALUES (NULL, 'Ingmar', 'Bergman', 'Sweden', '1918-07-14')
+
+
+Logickejšie, pre vyplnenie DEFAULT hodnoty, by bolo použiť kľúčové slovo DEFAULT:
+
+INSERT INTO directors
+VALUES (DEFAULT, 'Andrei', 'Tarkovsky', 'Russia', '1932-04-04')

@@ -79,14 +79,41 @@ var XYZ = ( function(){
 // Global enviroment
 XYZ.doStuff();
 
+//To slug, don't think about it
+
+return _.trim(
+  _.deburr(this.title.toLowerCase()) // diacritics
+      .replace(/[^\w\s]/gi, '') // special characters
+      .replace(/ {2,}/g, ' ') // repeating spaces
+      .replace(/ /g, '-'), // space to -
+  '-' // trailing -
+)
+
 /*-------------------------------------------------------------------
 
 Technical definitions
 
 Debounce - Fire request when stop performing the action
 Throttle - Limit how often the code runs
-Bottleneck - Part of code which make your code slowly
+Bottleneck - Part of code which make your app slowly
 Single threaded - You can run only 1 script at the same time
 Multithreading / Web worker - Method how to run multiple scrpit at the same time
 ASI or Automatic Semicolon Insertion - The name implies
+Flash Message - message that lasts one page view ( last = trvá )
+Virtual DOM - Virtualny DOM strom si drzi v RAM-ke, ked pride zmena porovna 
+              ju s kodom v RAM a novym a zmeni iba ten element ktory je iny.
+              Nie cely HTML
+Computed Properties - sú cached na rozdiel od bežných metód
+API - Pristupis k adrese a ona ti posle data
+Rate Limiting - How often you can send (api) request
+API authentication - Allow who can get api request
+Hot module replacement
+
+Method: 
+C      Post - Modify data which already exist
+R      Get - Request into the server
+U      Put/Patch - Replace entire data / part of data
+D      Delete - Delete data
 -------------------------------------------------------------------*/
+
+// Pagination
